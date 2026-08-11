@@ -6,252 +6,8 @@
 <title>Brando Díaz — Full Stack Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --bg:#F7F5F2;
-  --surface:#EFECE8;
-  --ink:#1A1814;
-  --ink2:#6B6760;
-  --ink3:#A8A5A0;
-  --accent:#2A5C8F;
-  --accent-light:#EAF0F7;
-  --border:#E0DDD8;
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'DM Sans',system-ui,sans-serif;
-  --max:1100px;
-  --ease:cubic-bezier(.25,.46,.45,.94);
-}
-
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
-
-/* ─── LANG TOGGLE ─── */
-[data-lang="es"] .en{display:none}
-[data-lang="en"] .es{display:none}
-
-/* ─── NAV ─── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.25rem 2.5rem;
-  background:rgba(247,245,242,.88);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s;
-}
-nav.scrolled{border-color:var(--border)}
-.nav-logo{font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-.nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
-.nav-links a{font-size:.85rem;font-weight:400;color:var(--ink2);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.lang-btn{
-  font-size:.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-  border:1px solid var(--border);border-radius:2rem;padding:.3rem .85rem;
-  background:transparent;color:var(--ink2);cursor:pointer;transition:all .2s;
-}
-.lang-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-
-/* ─── HERO ─── */
-#hero{
-  min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:0 2.5rem 5rem;
-  position:relative;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 50% at 80% 30%, #D8E8F5 0%, transparent 70%),
-             radial-gradient(ellipse 40% 40% at 20% 70%, #EDE9E3 0%, transparent 60%);
-  z-index:0;
-}
-.hero-content{position:relative;z-index:1;max-width:var(--max);margin:0 auto;width:100%}
-.hero-label{
-  font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:1.5rem;
-  opacity:0;animation:fadeUp .8s var(--ease) .2s forwards;
-}
-.hero-name{
-  font-family:var(--serif);font-size:clamp(3.5rem,8vw,7rem);font-weight:300;
-  line-height:1.0;letter-spacing:-.03em;color:var(--ink);
-  margin-bottom:1rem;
-  opacity:0;animation:fadeUp .9s var(--ease) .35s forwards;
-}
-.hero-name em{font-style:italic;color:var(--accent)}
-.hero-desc{
-  font-size:clamp(1rem,1.5vw,1.2rem);font-weight:300;color:var(--ink2);
-  max-width:52ch;line-height:1.7;
-  margin-bottom:2.5rem;
-  opacity:0;animation:fadeUp .9s var(--ease) .5s forwards;
-}
-.hero-ctas{
-  display:flex;gap:1rem;flex-wrap:wrap;
-  opacity:0;animation:fadeUp .9s var(--ease) .65s forwards;
-}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:.5rem;
-  background:var(--ink);color:var(--bg);
-  padding:.75rem 1.75rem;border-radius:.25rem;
-  font-size:.9rem;font-weight:400;text-decoration:none;letter-spacing:.02em;
-  transition:background .2s,transform .15s;
-}
-.btn-primary:hover{background:#333;transform:translateY(-1px)}
-.btn-secondary{
-  display:inline-flex;align-items:center;gap:.5rem;
-  border:1px solid var(--border);color:var(--ink);
-  padding:.75rem 1.75rem;border-radius:.25rem;
-  font-size:.9rem;font-weight:400;text-decoration:none;letter-spacing:.02em;
-  transition:border-color .2s,transform .15s;
-}
-.btn-secondary:hover{border-color:var(--ink);transform:translateY(-1px)}
-.hero-scroll{
-  position:absolute;bottom:2rem;right:2.5rem;
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink3);
-  opacity:0;animation:fadeIn 1s var(--ease) 1.2s forwards;
-}
-.scroll-line{width:1px;height:50px;background:var(--ink3);animation:scrollPulse 2s ease-in-out 1.5s infinite}
-
-/* ─── SECTION COMMON ─── */
-section{padding:6rem 2.5rem}
-.section-inner{max-width:var(--max);margin:0 auto}
-.section-label{
-  font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink3);margin-bottom:.75rem;
-}
-.section-title{
-  font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;
-  letter-spacing:-.02em;color:var(--ink);margin-bottom:3.5rem;line-height:1.1;
-}
-.section-title em{font-style:italic;color:var(--accent)}
-.divider{border:none;border-top:1px solid var(--border);margin:0}
-
-/* ─── ABOUT / STATS ─── */
-#about{background:var(--surface)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.about-text{font-size:1.05rem;font-weight:300;color:var(--ink2);line-height:1.8;max-width:48ch}
-.about-text p+p{margin-top:1.25rem}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.stat-card{padding:1.75rem;border:1px solid var(--border);border-radius:.5rem;background:var(--bg)}
-.stat-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--ink);line-height:1}
-.stat-label{font-size:.8rem;font-weight:400;color:var(--ink3);margin-top:.35rem;letter-spacing:.03em}
-
-/* ─── EXPERIENCE ─── */
-.exp-list{display:flex;flex-direction:column;gap:0}
-.exp-item{
-  display:grid;grid-template-columns:200px 1fr;gap:2rem;
-  padding:2.5rem 0;border-bottom:1px solid var(--border);
-}
-.exp-item:first-child{border-top:1px solid var(--border)}
-.exp-meta{padding-top:.2rem}
-.exp-period{font-size:.8rem;font-weight:400;color:var(--ink3);letter-spacing:.02em}
-.exp-company{font-size:.95rem;font-weight:500;color:var(--ink);margin-top:.35rem}
-.exp-loc{font-size:.8rem;color:var(--ink3);margin-top:.15rem}
-.exp-role{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--ink);margin-bottom:.75rem;letter-spacing:-.01em}
-.exp-desc{font-size:.95rem;font-weight:300;color:var(--ink2);line-height:1.75;max-width:60ch}
-.exp-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
-.tag{font-size:.72rem;font-weight:400;letter-spacing:.04em;padding:.2rem .65rem;border-radius:2rem;background:var(--accent-light);color:var(--accent)}
-
-/* ─── PROJECTS ─── */
-#projects{background:var(--surface)}
-.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.project-card{
-  background:var(--bg);border:1px solid var(--border);border-radius:.75rem;
-  padding:2rem;position:relative;overflow:hidden;
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
-}
-.project-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
-.project-card.featured{grid-column:span 2}
-.project-accent{
-  position:absolute;top:0;right:0;
-  width:120px;height:120px;
-  background:radial-gradient(circle at 100% 0%, var(--accent-light) 0%, transparent 70%);
-  pointer-events:none;
-}
-.project-num{font-size:.7rem;font-weight:500;letter-spacing:.1em;color:var(--ink3);margin-bottom:1.25rem}
-.project-title{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--ink);letter-spacing:-.01em;margin-bottom:.5rem}
-.project-subtitle{font-size:.85rem;font-weight:400;color:var(--accent);margin-bottom:1rem;letter-spacing:.02em}
-.project-desc{font-size:.9rem;font-weight:300;color:var(--ink2);line-height:1.7;max-width:58ch}
-.project-stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem}
-.stack-tag{font-size:.7rem;font-weight:400;padding:.2rem .6rem;border-radius:.2rem;background:var(--surface);color:var(--ink2);border:1px solid var(--border)}
-.project-link{
-  display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem;
-  font-size:.8rem;font-weight:500;color:var(--accent);text-decoration:none;letter-spacing:.03em;
-  transition:gap .2s;
-}
-.project-link:hover{gap:.7rem}
-.project-link svg{transition:transform .2s}
-.project-link:hover svg{transform:translate(2px,-2px)}
-.project-links{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1.25rem}
-.project-links .project-link{margin-top:0}
-
-/* ─── SKILLS ─── */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-.skill-group{}
-.skill-group-title{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
-.skill-list{display:flex;flex-direction:column;gap:.5rem}
-.skill-item{
-  display:flex;align-items:center;justify-content:space-between;
-  font-size:.9rem;font-weight:300;color:var(--ink2);padding:.4rem 0;
-}
-.skill-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
-
-/* ─── CONTACT ─── */
-#contact{background:var(--ink);color:var(--bg)}
-#contact .section-label{color:rgba(255,255,255,.35)}
-#contact .section-title{color:var(--bg)}
-#contact .section-title em{color:#7EB3E0}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.contact-text{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8;max-width:44ch}
-.contact-links{display:flex;flex-direction:column;gap:1rem}
-.contact-link{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,.1);border-radius:.5rem;
-  color:var(--bg);text-decoration:none;font-size:.9rem;font-weight:300;
-  transition:border-color .2s,background .2s;
-}
-.contact-link:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.04)}
-.contact-link-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.2rem}
-.contact-link-val{font-weight:400}
-.arrow-icon{opacity:.4;transition:opacity .2s,transform .2s}
-.contact-link:hover .arrow-icon{opacity:1;transform:translate(3px,-3px)}
-
-/* ─── FOOTER ─── */
-footer{
-  padding:2rem 2.5rem;background:var(--ink);
-  border-top:1px solid rgba(255,255,255,.07);
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-}
-footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:.4}50%{transform:scaleY(.6);opacity:.9}}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:768px){
-  nav{padding:1rem 1.25rem}
-  .nav-links{display:none}
-  #hero{padding:0 1.25rem 4rem}
-  section{padding:4rem 1.25rem}
-  .about-grid,.contact-grid{grid-template-columns:1fr}
-  .exp-item{grid-template-columns:1fr;gap:.75rem}
-  .projects-grid{grid-template-columns:1fr}
-  .project-card.featured{grid-column:span 1}
-  .skills-grid{grid-template-columns:1fr 1fr}
-  footer{flex-direction:column;align-items:flex-start}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body data-lang="en">
 
@@ -293,6 +49,10 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
         <span class="en">Get in touch</span>
         <span class="es">Contáctame</span>
       </a>
+      <a href="retro.html" class="btn-retro">
+        <span class="en">Let's go back to 2000</span>
+        <span class="es">Volvamos al 2000</span>
+      </a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -316,6 +76,11 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
       <span class="es">Creando productos<br/>que <em>importan.</em></span>
     </h2>
     <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="about-photo-frame">
+          <img src="assets/images/me/me-brutalist.png" alt="Brando Díaz" loading="lazy"/>
+        </div>
+      </div>
       <div class="about-text reveal reveal-delay-2">
         <p class="en">I'm a full-stack developer based in Colombia with over 4 years of professional experience across startups, enterprises, and my own freelance projects. I specialize in backend-heavy systems, cloud infrastructure, and building AI-powered tools that automate real workflows.</p>
         <p class="es">Soy un desarrollador full-stack basado en Colombia con más de 4 años de experiencia profesional en startups, empresas y proyectos freelance propios. Me especializo en sistemas backend complejos, infraestructura cloud y herramientas con IA que automatizan flujos de trabajo reales.</p>
@@ -363,7 +128,7 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     </h2>
     <div class="exp-list">
 
-      <div class="exp-item reveal">
+      <div class="exp-item active reveal">
         <div class="exp-meta">
           <div class="exp-period">2021 — Present</div>
           <div class="exp-company">Freelancer</div>
@@ -447,9 +212,14 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
     <div class="projects-grid">
 
       <!-- Docubot - featured -->
-      <div class="project-card featured reveal">
+      <div class="project-card featured reveal" data-num="01">
         <div class="project-accent"></div>
         <div class="project-num">01</div>
+        <div class="project-media">
+          <div class="shot-frame shot-a"><img src="assets/images/projects/docubot-dashboard.png" alt="Docubot admin dashboard" loading="lazy"/></div>
+          <div class="shot-frame shot-b"><img src="assets/images/projects/docubot-chats.png" alt="Docubot WhatsApp chat center" loading="lazy"/></div>
+          <div class="shot-frame shot-c"><img src="assets/images/projects/docubot-config.png" alt="Docubot configuration panel" loading="lazy"/></div>
+        </div>
         <h3 class="project-title">Docubot</h3>
         <p class="project-subtitle en">AI Agent · Transport Sector · Production</p>
         <p class="project-subtitle es">Agente IA · Sector Transporte · En Producción</p>
@@ -473,9 +243,12 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
       </div>
 
       <!-- Nesting App -->
-      <div class="project-card reveal reveal-delay-1">
+      <div class="project-card reveal reveal-delay-1" data-num="02">
         <div class="project-accent"></div>
         <div class="project-num">02</div>
+        <div class="project-media">
+          <div class="shot-frame shot-solo"><img src="assets/images/projects/nesting-app.png" alt="Nesting App cutting optimization editor" loading="lazy"/></div>
+        </div>
         <h3 class="project-title">Nesting App</h3>
         <p class="project-subtitle en">Optimization Engine · Textile Industry · Production</p>
         <p class="project-subtitle es">Motor de Optimización · Industria Textil · En Producción</p>
@@ -499,9 +272,13 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
       </div>
 
       <!-- SICOP -->
-      <div class="project-card reveal reveal-delay-2">
+      <div class="project-card reveal reveal-delay-2" data-num="03">
         <div class="project-accent"></div>
         <div class="project-num">03</div>
+        <div class="project-media">
+          <div class="shot-frame shot-a"><img src="assets/images/projects/sicop-budget.png" alt="SICOP budget dashboard with charts" loading="lazy"/></div>
+          <div class="shot-frame shot-b"><img src="assets/images/projects/sicop-login.png" alt="SICOP landing screen" loading="lazy"/></div>
+        </div>
         <h3 class="project-title">SICOP</h3>
         <p class="project-subtitle en">Enterprise System · Budget & Operations · Active Dev</p>
         <p class="project-subtitle es">Sistema Empresarial · Presupuesto y Operaciones · En Desarrollo</p>
@@ -525,9 +302,13 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
       </div>
 
       <!-- POS -->
-      <div class="project-card reveal reveal-delay-3">
+      <div class="project-card reveal reveal-delay-3" data-num="04">
         <div class="project-accent"></div>
         <div class="project-num">04</div>
+        <div class="project-media">
+          <div class="shot-frame shot-a"><img src="assets/images/projects/clickstock-admin.png" alt="ClickStock POS admin panel" loading="lazy"/></div>
+          <div class="shot-frame shot-b"><img src="assets/images/projects/clickstock-profile.png" alt="ClickStock POS profile settings" loading="lazy"/></div>
+        </div>
         <h3 class="project-title">ClickStock POS</h3>
         <p class="project-subtitle en">Point of Sale Platform · Retail & Invoicing · Production</p>
         <p class="project-subtitle es">Plataforma POS · Retail y Facturación · En Producción</p>
@@ -555,6 +336,13 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
 </section>
 
 <hr class="divider"/>
+
+<section class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PYTHON</span><span>GO</span><span>VUE 3</span><span>DJANGO</span><span>DOCKER</span><span>AWS</span><span>KUBERNETES</span><span>TYPESCRIPT</span><span>POSTGRESQL</span><span>RASA NLP</span>
+    <span>PYTHON</span><span>GO</span><span>VUE 3</span><span>DJANGO</span><span>DOCKER</span><span>AWS</span><span>KUBERNETES</span><span>TYPESCRIPT</span><span>POSTGRESQL</span><span>RASA NLP</span>
+  </div>
+</section>
 
 <!-- SKILLS -->
 <section id="skills">
@@ -654,30 +442,6 @@ footer p{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:300}
   <p class="es">Diseñado y construido desde cero</p>
 </footer>
 
-<script>
-// Lang toggle
-const toggle = document.getElementById('langToggle');
-const body = document.body;
-toggle.addEventListener('click', () => {
-  const isEN = body.dataset.lang === 'en';
-  body.dataset.lang = isEN ? 'es' : 'en';
-  toggle.textContent = isEN ? 'EN' : 'ES';
-});
-
-// Scroll nav
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-}, {passive:true});
-
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-  });
-}, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(el => io.observe(el));
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
