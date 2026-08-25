@@ -6,14 +6,14 @@
 <title>Brando Díaz — Full Stack Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body data-lang="en">
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Brando Díaz</a>
+  <a href="#hero" class="nav-logo">BRANDO_DIAZ</a>
   <ul class="nav-links">
     <li><a href="#about"><span class="en">About</span><span class="es">Sobre mí</span></a></li>
     <li><a href="#experience"><span class="en">Experience</span><span class="es">Experiencia</span></a></li>
@@ -21,20 +21,23 @@
     <li><a href="#skills"><span class="en">Skills</span><span class="es">Habilidades</span></a></li>
     <li><a href="#contact"><span class="en">Contact</span><span class="es">Contacto</span></a></li>
   </ul>
-  <button class="lang-btn" id="langToggle">ES</button>
+  <div class="nav-controls">
+    <button class="ctrl-btn" id="noiseToggle" type="button" aria-pressed="true">
+      <span class="en">GRID: ON</span><span class="es">CUADRÍCULA: ON</span>
+    </button>
+    <button class="ctrl-btn" id="langToggle" type="button">ES</button>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
   <div class="hero-content">
-    <p class="hero-label">
-      <span class="en">Full Stack Developer · Colombia</span>
-      <span class="es">Desarrollador Full Stack · Colombia</span>
+    <p class="status-line">
+      <span class="status-dot"></span>
+      <span class="en">STATUS: AVAILABLE&nbsp;&nbsp;/&nbsp;&nbsp;LOCATION: COLOMBIA (UTC-5)&nbsp;&nbsp;/&nbsp;&nbsp;ROLE: FULL-STACK DEV</span>
+      <span class="es">ESTADO: DISPONIBLE&nbsp;&nbsp;/&nbsp;&nbsp;UBICACIÓN: COLOMBIA (UTC-5)&nbsp;&nbsp;/&nbsp;&nbsp;ROL: FULL-STACK DEV</span>
     </p>
-    <h1 class="hero-name">
-      Brando<br/><em>Díaz.</em>
-    </h1>
+    <h1 class="hero-name">Brando Díaz</h1>
     <p class="hero-desc">
       <span class="en">I build scalable systems and intelligent applications — from AI-powered chatbots to cutting-edge optimization engines. 4+ years shipping real products for real industries.</span>
       <span class="es">Construyo sistemas escalables y aplicaciones inteligentes — desde chatbots con IA hasta motores de optimización avanzada. Más de 4 años entregando productos reales para industrias reales.</span>
@@ -43,23 +46,21 @@
       <a href="#projects" class="btn-primary">
         <span class="en">View Projects</span>
         <span class="es">Ver Proyectos</span>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="#contact" class="btn-secondary">
         <span class="en">Get in touch</span>
         <span class="es">Contáctame</span>
       </a>
-      <a href="retro.html" class="btn-retro">
-        <span class="en">Let's go back to 2000</span>
-        <span class="es">Volvamos al 2000</span>
+      <a href="retro.html" class="btn-ghost">
+        <span class="en">/retro</span>
+        <span class="es">/retro</span>
       </a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span class="en">Scroll</span>
-    <span class="es">Bajar</span>
-  </div>
+  <p class="hero-scroll">
+    <span class="en">Scroll ↓</span>
+    <span class="es">Bajar ↓</span>
+  </p>
 </section>
 
 <hr class="divider"/>
@@ -67,46 +68,43 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
-    <p class="section-label reveal">
-      <span class="en">01 — About</span>
-      <span class="es">01 — Sobre mí</span>
-    </p>
-    <h2 class="section-title reveal reveal-delay-1">
-      <span class="en">Building products<br/>that <em>matter.</em></span>
-      <span class="es">Creando productos<br/>que <em>importan.</em></span>
+    <div class="section-head">
+      <p class="section-label"><span class="index-num">01</span><span class="en">About</span><span class="es">Sobre mí</span></p>
+    </div>
+    <h2 class="section-title" style="margin-bottom:2.5rem">
+      <span class="en">Building products that matter.</span>
+      <span class="es">Creando productos que importan.</span>
     </h2>
     <div class="about-grid">
-      <div class="about-photo reveal">
-        <div class="about-photo-frame">
-          <img src="assets/images/me/me-brutalist.png" alt="Brando Díaz" loading="lazy"/>
-        </div>
+      <div class="node-frame bracket-frame">
+        <img src="assets/images/me/me-brutalist.png" alt="Brando Díaz"/>
       </div>
-      <div class="about-text reveal reveal-delay-2">
+      <div class="about-text">
         <p class="en">I'm a full-stack developer based in Colombia with over 4 years of professional experience across startups, enterprises, and my own freelance projects. I specialize in backend-heavy systems, cloud infrastructure, and building AI-powered tools that automate real workflows.</p>
         <p class="es">Soy un desarrollador full-stack basado en Colombia con más de 4 años de experiencia profesional en startups, empresas y proyectos freelance propios. Me especializo en sistemas backend complejos, infraestructura cloud y herramientas con IA que automatizan flujos de trabajo reales.</p>
-        <p class="en" style="margin-top:1.25rem">At Indra, I led development for major energy companies like Enel. Today, as a freelancer, I architect and ship end-to-end systems from scratch — including Docubot, an AI agent already operating in Colombia's transport sector.</p>
-        <p class="es" style="margin-top:1.25rem">En Indra, lideré el desarrollo para grandes empresas como Enel. Hoy, como freelancer, diseño y entrego sistemas completos desde cero — incluyendo Docubot, un agente IA ya operando en el sector transporte de Colombia.</p>
+        <p class="en">At Indra, I led development for major energy companies like Enel. Today, as a freelancer, I architect and ship end-to-end systems from scratch — including Docubot, an AI agent already operating in Colombia's transport sector.</p>
+        <p class="es">En Indra, lideré el desarrollo para grandes empresas como Enel. Hoy, como freelancer, diseño y entrego sistemas completos desde cero — incluyendo Docubot, un agente IA ya operando en el sector transporte de Colombia.</p>
       </div>
-      <div class="stats-grid reveal reveal-delay-3">
-        <div class="stat-card">
+      <div class="stats-row">
+        <div class="stat-tile">
           <div class="stat-num">4+</div>
-          <div class="stat-label en">Years of experience</div>
+          <div class="stat-label en">Years experience</div>
           <div class="stat-label es">Años de experiencia</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-tile">
           <div class="stat-num">3</div>
-          <div class="stat-label en">Deployed systems in production</div>
+          <div class="stat-label en">Systems in production</div>
           <div class="stat-label es">Sistemas en producción</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-tile">
           <div class="stat-num">10+</div>
-          <div class="stat-label en">Technologies mastered</div>
-          <div class="stat-label es">Tecnologías dominadas</div>
+          <div class="stat-label en">Technologies</div>
+          <div class="stat-label es">Tecnologías</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-tile">
           <div class="stat-num">30%</div>
-          <div class="stat-label en">Dev time reduction via CI/CD</div>
-          <div class="stat-label es">Reducción de tiempo con CI/CD</div>
+          <div class="stat-label en">CI/CD time reduction</div>
+          <div class="stat-label es">Reducción con CI/CD</div>
         </div>
       </div>
     </div>
@@ -118,75 +116,78 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-inner">
-    <p class="section-label reveal">
-      <span class="en">02 — Experience</span>
-      <span class="es">02 — Experiencia</span>
-    </p>
-    <h2 class="section-title reveal reveal-delay-1">
-      <span class="en">Where I've<br/><em>worked.</em></span>
-      <span class="es">Dónde he<br/><em>trabajado.</em></span>
+    <div class="section-head">
+      <p class="section-label"><span class="index-num">02</span><span class="en">Experience</span><span class="es">Experiencia</span></p>
+    </div>
+    <h2 class="section-title" style="margin-bottom:2.5rem">
+      <span class="en">Where I've worked.</span>
+      <span class="es">Dónde he trabajado.</span>
     </h2>
-    <div class="exp-list">
+    <div class="timeline">
 
-      <div class="exp-item active reveal">
-        <div class="exp-meta">
-          <div class="exp-period">2021 — Present</div>
-          <div class="exp-company">Freelancer</div>
-          <div class="exp-loc">San Agustín, Colombia</div>
+      <div class="timeline-item active">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <div class="t-period">2021 — PRESENT</div>
+          <div class="t-company">Freelancer</div>
+          <div class="t-loc">San Agustín, Colombia</div>
         </div>
-        <div>
-          <div class="exp-role">Full Stack Developer</div>
-          <p class="exp-desc en">Building end-to-end web applications and AI-powered systems for clients across Latin America. Architecting cloud-native solutions on AWS and Oracle Cloud using Docker and Kubernetes.</p>
-          <p class="exp-desc es">Construcción de aplicaciones web y sistemas con IA para clientes en Latinoamérica. Diseño de soluciones cloud-native en AWS y Oracle Cloud con Docker y Kubernetes.</p>
-          <div class="exp-tags">
+        <div class="timeline-body">
+          <div class="t-role">Full Stack Developer</div>
+          <p class="t-desc en">Building end-to-end web applications and AI-powered systems for clients across Latin America. Architecting cloud-native solutions on AWS and Oracle Cloud using Docker and Kubernetes.</p>
+          <p class="t-desc es">Construcción de aplicaciones web y sistemas con IA para clientes en Latinoamérica. Diseño de soluciones cloud-native en AWS y Oracle Cloud con Docker y Kubernetes.</p>
+          <div class="t-tags">
             <span class="tag">Django</span><span class="tag">Go</span><span class="tag">Vue 3</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AI/NLP</span>
           </div>
         </div>
       </div>
 
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">Nov 2021 — Jan 2024</div>
-          <div class="exp-company">Indra</div>
-          <div class="exp-loc">Bogotá, Colombia</div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <div class="t-period">NOV 2021 — JAN 2024</div>
+          <div class="t-company">Indra</div>
+          <div class="t-loc">Bogotá, Colombia</div>
         </div>
-        <div>
-          <div class="exp-role">Senior Developer</div>
-          <p class="exp-desc en">Led development of high-impact applications for major energy companies. Built a call center solution for Enel and a turbine maintenance system for hydroelectric plants. Reduced operational response times significantly through modern architecture.</p>
-          <p class="exp-desc es">Lideré el desarrollo de aplicaciones de alto impacto para grandes empresas energéticas. Construí un sistema de call center para Enel y una herramienta de mantenimiento de turbinas para plantas hidroeléctricas. Reduje tiempos de respuesta operacional con arquitectura moderna.</p>
-          <div class="exp-tags">
+        <div class="timeline-body">
+          <div class="t-role">Senior Developer</div>
+          <p class="t-desc en">Led development of high-impact applications for major energy companies. Built a call center solution for Enel and a turbine maintenance system for hydroelectric plants. Reduced operational response times significantly through modern architecture.</p>
+          <p class="t-desc es">Lideré el desarrollo de aplicaciones de alto impacto para grandes empresas energéticas. Construí un sistema de call center para Enel y una herramienta de mantenimiento de turbinas para plantas hidroeléctricas. Reduje tiempos de respuesta operacional con arquitectura moderna.</p>
+          <div class="t-tags">
             <span class="tag">Django</span><span class="tag">Spring Boot</span><span class="tag">Angular</span><span class="tag">PostgreSQL</span><span class="tag">Oracle Cloud</span>
           </div>
         </div>
       </div>
 
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">Feb 2023 — Apr 2023</div>
-          <div class="exp-company">Lisa Insurtech</div>
-          <div class="exp-loc">Chile (Remote)</div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <div class="t-period">FEB 2023 — APR 2023</div>
+          <div class="t-company">Lisa Insurtech</div>
+          <div class="t-loc">Chile (Remote)</div>
         </div>
-        <div>
-          <div class="exp-role">Data Scientist</div>
-          <p class="exp-desc en">Trained AI models and built Python pipelines for automated document analysis and processing. Tuned and deployed ML models in production.</p>
-          <p class="exp-desc es">Entrenamiento de modelos de IA y construcción de pipelines en Python para análisis y procesamiento automático de documentos. Ajuste y despliegue de modelos ML en producción.</p>
-          <div class="exp-tags">
+        <div class="timeline-body">
+          <div class="t-role">Data Scientist</div>
+          <p class="t-desc en">Trained AI models and built Python pipelines for automated document analysis and processing. Tuned and deployed ML models in production.</p>
+          <p class="t-desc es">Entrenamiento de modelos de IA y construcción de pipelines en Python para análisis y procesamiento automático de documentos. Ajuste y despliegue de modelos ML en producción.</p>
+          <div class="t-tags">
             <span class="tag">Python</span><span class="tag">ML</span><span class="tag">NLP</span><span class="tag">Data Pipelines</span>
           </div>
         </div>
       </div>
 
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">May 2021 — Oct 2021</div>
-          <div class="exp-company">Linkoll</div>
-          <div class="exp-loc">Bogotá, Colombia</div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <div class="t-period">MAY 2021 — OCT 2021</div>
+          <div class="t-company">Linkoll</div>
+          <div class="t-loc">Bogotá, Colombia</div>
         </div>
-        <div>
-          <div class="exp-role">Front-end Developer</div>
-          <p class="exp-desc en">Developed a business-focused web application and designed a RESTful API to integrate two legacy systems — one on a remote server and another in FileMaker — via Django REST Framework.</p>
-          <p class="exp-desc es">Desarrollo de una aplicación web empresarial y diseño de una API RESTful para integrar dos sistemas legacy — uno en servidor remoto y otro en FileMaker — a través de Django REST Framework.</p>
-          <div class="exp-tags">
+        <div class="timeline-body">
+          <div class="t-role">Front-end Developer</div>
+          <p class="t-desc en">Developed a business-focused web application and designed a RESTful API to integrate two legacy systems — one on a remote server and another in FileMaker — via Django REST Framework.</p>
+          <p class="t-desc es">Desarrollo de una aplicación web empresarial y diseño de una API RESTful para integrar dos sistemas legacy — uno en servidor remoto y otro en FileMaker — a través de Django REST Framework.</p>
+          <div class="t-tags">
             <span class="tag">Django</span><span class="tag">JavaScript</span><span class="tag">DRF</span><span class="tag">FileMaker</span>
           </div>
         </div>
@@ -201,135 +202,103 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
-    <p class="section-label reveal">
-      <span class="en">03 — Projects</span>
-      <span class="es">03 — Proyectos</span>
-    </p>
-    <h2 class="section-title reveal reveal-delay-1">
-      <span class="en">Things I've<br/><em>built.</em></span>
-      <span class="es">Lo que he<br/><em>construido.</em></span>
+    <div class="section-head">
+      <p class="section-label"><span class="index-num">03</span><span class="en">Projects</span><span class="es">Proyectos</span></p>
+    </div>
+    <h2 class="section-title" style="margin-bottom:2.5rem">
+      <span class="en">Things I've built.</span>
+      <span class="es">Lo que he construido.</span>
     </h2>
-    <div class="projects-grid">
 
-      <!-- Docubot - featured -->
-      <div class="project-card featured reveal" data-num="01">
-        <div class="project-accent"></div>
-        <div class="project-num">01</div>
-        <div class="project-media">
-          <div class="shot-frame shot-a"><img src="assets/images/projects/docubot-dashboard.png" alt="Docubot admin dashboard" loading="lazy"/></div>
-          <div class="shot-frame shot-b"><img src="assets/images/projects/docubot-chats.png" alt="Docubot WhatsApp chat center" loading="lazy"/></div>
-          <div class="shot-frame shot-c"><img src="assets/images/projects/docubot-config.png" alt="Docubot configuration panel" loading="lazy"/></div>
+    <div class="node-grid bracket-frame">
+
+      <!-- Docubot -->
+      <article class="node-cell node-cell--wide">
+        <header class="node-head">
+          <span class="node-id">P01</span>
+          <span class="node-status"><span class="status-dot"></span><span class="en">PRODUCTION</span><span class="es">EN PRODUCCIÓN</span></span>
+        </header>
+        <div class="node-media n3">
+          <img src="assets/images/projects/docubot-dashboard.png" alt="Docubot admin dashboard" loading="lazy"/>
+          <img src="assets/images/projects/docubot-chats.png" alt="Docubot WhatsApp chat center" loading="lazy"/>
+          <img src="assets/images/projects/docubot-config.png" alt="Docubot configuration panel" loading="lazy"/>
         </div>
-        <h3 class="project-title">Docubot</h3>
-        <p class="project-subtitle en">AI Agent · Transport Sector · Production</p>
-        <p class="project-subtitle es">Agente IA · Sector Transporte · En Producción</p>
-        <p class="project-desc en">Modular AI chatbot ecosystem that automates legal document processing for Colombia's transport sector via WhatsApp. Integrates directly with the Ministry of Transport's systems to issue official documents on behalf of users. Built with a microservices architecture: Go/Gin API, Rasa NLP engine, Node.js + Baileys WhatsApp gateway, Playwright browser automation, and a Vue 3 admin dashboard.</p>
-        <p class="project-desc es">Ecosistema de chatbot IA modular que automatiza la expedición de documentos legales para el sector transporte de Colombia vía WhatsApp. Se integra directamente con los sistemas del Ministerio de Transporte para expedir documentos oficiales. Arquitectura de microservicios: API Go/Gin, motor NLP Rasa, gateway WhatsApp con Node.js + Baileys, automatización web con Playwright y panel administrativo Vue 3.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Go / Gin</span><span class="stack-tag">Vue 3</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Rasa NLP</span><span class="stack-tag">Node.js</span><span class="stack-tag">Playwright</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">MongoDB</span><span class="stack-tag">Docker</span><span class="stack-tag">AWS EC2</span>
+        <h3 class="node-title">Docubot</h3>
+        <p class="node-subtitle en">AI Agent · Transport Sector</p>
+        <p class="node-subtitle es">Agente IA · Sector Transporte</p>
+        <p class="node-desc en">Modular AI chatbot ecosystem that automates legal document processing for Colombia's transport sector via WhatsApp. Integrates directly with the Ministry of Transport's systems to issue official documents on behalf of users.</p>
+        <p class="node-desc es">Ecosistema de chatbot IA modular que automatiza la expedición de documentos legales para el sector transporte de Colombia vía WhatsApp. Se integra directamente con los sistemas del Ministerio de Transporte.</p>
+        <p class="node-stack">GO/GIN · VUE 3 · TYPESCRIPT · RASA NLP · NODE.JS · PLAYWRIGHT · POSTGRESQL · MONGODB · DOCKER · AWS EC2</p>
+        <div class="node-links">
+          <a href="https://sotranscolombianos.com.co/" target="_blank" rel="noopener" class="node-link"><span class="en">[ DEMO ]</span><span class="es">[ VER EN VIVO ]</span></a>
+          <a href="https://github.com/Brando1998/Docubot" target="_blank" rel="noopener" class="node-link">[ SOURCE ]</a>
         </div>
-        <div class="project-links">
-          <a href="https://sotranscolombianos.com.co/" target="_blank" class="project-link">
-            <span class="en">Live Demo</span>
-            <span class="es">Ver en vivo</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://github.com/Brando1998/Docubot" target="_blank" class="project-link" style="color:var(--ink3)">
-            <span class="en">View on GitHub</span>
-            <span class="es">Ver en GitHub</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+      </article>
 
       <!-- Nesting App -->
-      <div class="project-card reveal reveal-delay-1" data-num="02">
-        <div class="project-accent"></div>
-        <div class="project-num">02</div>
-        <div class="project-media">
-          <div class="shot-frame shot-solo"><img src="assets/images/projects/nesting-app.png" alt="Nesting App cutting optimization editor" loading="lazy"/></div>
+      <article class="node-cell">
+        <header class="node-head">
+          <span class="node-id">P02</span>
+          <span class="node-status"><span class="status-dot"></span><span class="en">PRODUCTION</span><span class="es">EN PRODUCCIÓN</span></span>
+        </header>
+        <div class="node-media n1">
+          <img src="assets/images/projects/nesting-app.png" alt="Nesting App cutting optimization editor" loading="lazy"/>
         </div>
-        <h3 class="project-title">Nesting App</h3>
-        <p class="project-subtitle en">Optimization Engine · Textile Industry · Production</p>
-        <p class="project-subtitle es">Motor de Optimización · Industria Textil · En Producción</p>
-        <p class="project-desc en">Full-stack garment cutting optimization platform using a genetic algorithm with SAT collision detection to achieve 85–95% material utilization. Features an interactive canvas editor, multi-size piece management, MercadoPago integration, and async processing via Celery.</p>
-        <p class="project-desc es">Plataforma de optimización de corte textil con algoritmo genético y detección de colisiones SAT, logrando 85–95% de utilización del material. Editor de canvas interactivo, manejo de tallas múltiples, integración con MercadoPago y procesamiento asíncrono con Celery.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Django</span><span class="stack-tag">Vue 3</span><span class="stack-tag">Fabric.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">Celery</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Docker</span><span class="stack-tag">Oracle Cloud</span>
+        <h3 class="node-title">Nesting App</h3>
+        <p class="node-subtitle en">Optimization Engine · Textile</p>
+        <p class="node-subtitle es">Motor de Optimización · Textil</p>
+        <p class="node-desc en">Garment cutting optimization platform using a genetic algorithm with SAT collision detection — 85–95% material utilization.</p>
+        <p class="node-desc es">Plataforma de optimización de corte textil con algoritmo genético y detección de colisiones SAT — 85–95% de utilización del material.</p>
+        <p class="node-stack">DJANGO · VUE 3 · FABRIC.JS · CELERY · POSTGRESQL · DOCKER</p>
+        <div class="node-links">
+          <a href="http://18.191.197.63" target="_blank" rel="noopener" class="node-link"><span class="en">[ DEMO ]</span><span class="es">[ VER EN VIVO ]</span></a>
+          <a href="https://github.com/Brando1998/nesting-app" target="_blank" rel="noopener" class="node-link">[ SOURCE ]</a>
         </div>
-        <div class="project-links">
-          <a href="http://18.191.197.63" target="_blank" class="project-link">
-            <span class="en">Live Demo</span>
-            <span class="es">Ver en vivo</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://github.com/Brando1998/nesting-app" target="_blank" class="project-link" style="color:var(--ink3)">
-            <span class="en">View on GitHub</span>
-            <span class="es">Ver en GitHub</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+      </article>
 
       <!-- SICOP -->
-      <div class="project-card reveal reveal-delay-2" data-num="03">
-        <div class="project-accent"></div>
-        <div class="project-num">03</div>
-        <div class="project-media">
-          <div class="shot-frame shot-a"><img src="assets/images/projects/sicop-budget.png" alt="SICOP budget dashboard with charts" loading="lazy"/></div>
-          <div class="shot-frame shot-b"><img src="assets/images/projects/sicop-login.png" alt="SICOP landing screen" loading="lazy"/></div>
+      <article class="node-cell">
+        <header class="node-head">
+          <span class="node-id">P03</span>
+          <span class="node-status"><span class="status-dot"></span><span class="en">ACTIVE DEV</span><span class="es">EN DESARROLLO</span></span>
+        </header>
+        <div class="node-media n2">
+          <img src="assets/images/projects/sicop-budget.png" alt="SICOP budget dashboard with charts" loading="lazy"/>
+          <img src="assets/images/projects/sicop-login.png" alt="SICOP landing screen" loading="lazy"/>
         </div>
-        <h3 class="project-title">SICOP</h3>
-        <p class="project-subtitle en">Enterprise System · Budget & Operations · Active Dev</p>
-        <p class="project-subtitle es">Sistema Empresarial · Presupuesto y Operaciones · En Desarrollo</p>
-        <p class="project-desc en">Enterprise-grade Django application for budget control and operations management. Implements role-based access with granular permissions, multi-environment Docker Compose (dev/staging/prod), Celery async tasks, and automated PostgreSQL backups from AWS.</p>
-        <p class="project-desc es">Aplicación Django empresarial para control presupuestal y gestión operativa. Control de acceso por roles con permisos granulares, Docker Compose multi-entorno (dev/staging/prod), tareas asíncronas con Celery y backups automatizados de PostgreSQL desde AWS.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Django</span><span class="stack-tag">Python</span><span class="stack-tag">Celery</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Docker</span><span class="stack-tag">AWS</span><span class="stack-tag">GitHub Actions</span>
+        <h3 class="node-title">SICOP</h3>
+        <p class="node-subtitle en">Enterprise System · Budget &amp; Ops</p>
+        <p class="node-subtitle es">Sistema Empresarial · Presupuesto</p>
+        <p class="node-desc en">Enterprise-grade Django application for budget control and operations management with granular role-based access.</p>
+        <p class="node-desc es">Aplicación Django empresarial para control presupuestal y gestión operativa con permisos granulares por rol.</p>
+        <p class="node-stack">DJANGO · PYTHON · CELERY · POSTGRESQL · DOCKER · AWS</p>
+        <div class="node-links">
+          <a href="https://presupuesto.maloka.org/es/" target="_blank" rel="noopener" class="node-link"><span class="en">[ DEMO ]</span><span class="es">[ VER EN VIVO ]</span></a>
+          <a href="https://github.com/Brando1998/maloka-sicop-me" target="_blank" rel="noopener" class="node-link">[ SOURCE ]</a>
         </div>
-        <div class="project-links">
-          <a href="https://presupuesto.maloka.org/es/" target="_blank" class="project-link">
-            <span class="en">Live Demo</span>
-            <span class="es">Ver en vivo</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://github.com/Brando1998/maloka-sicop-me" target="_blank" class="project-link" style="color:var(--ink3)">
-            <span class="en">View on GitHub</span>
-            <span class="es">Ver en GitHub</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+      </article>
 
-      <!-- POS -->
-      <div class="project-card reveal reveal-delay-3" data-num="04">
-        <div class="project-accent"></div>
-        <div class="project-num">04</div>
-        <div class="project-media">
-          <div class="shot-frame shot-a"><img src="assets/images/projects/clickstock-admin.png" alt="ClickStock POS admin panel" loading="lazy"/></div>
-          <div class="shot-frame shot-b"><img src="assets/images/projects/clickstock-profile.png" alt="ClickStock POS profile settings" loading="lazy"/></div>
+      <!-- ClickStock POS -->
+      <article class="node-cell">
+        <header class="node-head">
+          <span class="node-id">P04</span>
+          <span class="node-status"><span class="status-dot"></span><span class="en">PRODUCTION</span><span class="es">EN PRODUCCIÓN</span></span>
+        </header>
+        <div class="node-media n2">
+          <img src="assets/images/projects/clickstock-admin.png" alt="ClickStock POS admin panel" loading="lazy"/>
+          <img src="assets/images/projects/clickstock-profile.png" alt="ClickStock POS profile settings" loading="lazy"/>
         </div>
-        <h3 class="project-title">ClickStock POS</h3>
-        <p class="project-subtitle en">Point of Sale Platform · Retail & Invoicing · Production</p>
-        <p class="project-subtitle es">Plataforma POS · Retail y Facturación · En Producción</p>
-        <p class="project-desc en">Full-stack point-of-sale platform for Colombian retailers, covering checkout, multi-store inventory, employee management, gift cards, bookings, and DIAN-compliant electronic invoicing. Offline-first PWA with a local sync queue and conflict resolution keeps sales running without connectivity, backed by an event-driven Go/Kafka backend.</p>
-        <p class="project-desc es">Plataforma POS full-stack para comercios colombianos, con caja, inventario multi-tienda, gestión de empleados, tarjetas de regalo, reservas y facturación electrónica DIAN. PWA offline-first con cola de sincronización local y resolución de conflictos, sobre un backend Go/Kafka orientado a eventos.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Go / Gin</span><span class="stack-tag">Vue 3</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Kafka</span><span class="stack-tag">GORM</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">PWA</span><span class="stack-tag">Docker</span>
+        <h3 class="node-title">ClickStock POS</h3>
+        <p class="node-subtitle en">Point of Sale · Retail</p>
+        <p class="node-subtitle es">Punto de Venta · Retail</p>
+        <p class="node-desc en">Offline-first PWA point-of-sale for Colombian retailers with DIAN electronic invoicing and an event-driven Go/Kafka backend.</p>
+        <p class="node-desc es">PWA de punto de venta offline-first para comercios colombianos con facturación electrónica DIAN y backend Go/Kafka orientado a eventos.</p>
+        <p class="node-stack">GO/GIN · VUE 3 · TYPESCRIPT · KAFKA · GORM · POSTGRESQL · PWA</p>
+        <div class="node-links">
+          <a href="https://www.clickstock.lat/login" target="_blank" rel="noopener" class="node-link"><span class="en">[ DEMO ]</span><span class="es">[ VER EN VIVO ]</span></a>
+          <a href="https://github.com/Brando1998/pos" target="_blank" rel="noopener" class="node-link">[ SOURCE ]</a>
         </div>
-        <div class="project-links">
-          <a href="https://www.clickstock.lat/login" target="_blank" class="project-link">
-            <span class="en">Live Demo</span>
-            <span class="es">Ver en vivo</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://github.com/Brando1998/pos" target="_blank" class="project-link" style="color:var(--ink3)">
-            <span class="en">View on GitHub</span>
-            <span class="es">Ver en GitHub</span>
-            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+      </article>
 
     </div>
   </div>
@@ -337,99 +306,83 @@
 
 <hr class="divider"/>
 
-<section class="marquee-strip" aria-hidden="true">
-  <div class="marquee-track">
-    <span>PYTHON</span><span>GO</span><span>VUE 3</span><span>DJANGO</span><span>DOCKER</span><span>AWS</span><span>KUBERNETES</span><span>TYPESCRIPT</span><span>POSTGRESQL</span><span>RASA NLP</span>
-    <span>PYTHON</span><span>GO</span><span>VUE 3</span><span>DJANGO</span><span>DOCKER</span><span>AWS</span><span>KUBERNETES</span><span>TYPESCRIPT</span><span>POSTGRESQL</span><span>RASA NLP</span>
-  </div>
-</section>
-
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
-    <p class="section-label reveal">
-      <span class="en">04 — Skills</span>
-      <span class="es">04 — Habilidades</span>
-    </p>
-    <h2 class="section-title reveal reveal-delay-1">
-      <span class="en">My tech<br/><em>stack.</em></span>
-      <span class="es">Mi stack<br/><em>técnico.</em></span>
+    <div class="section-head">
+      <p class="section-label"><span class="index-num">04</span><span class="en">Skills</span><span class="es">Habilidades</span></p>
+    </div>
+    <h2 class="section-title" style="margin-bottom:2.5rem">
+      <span class="en">My tech stack.</span>
+      <span class="es">Mi stack técnico.</span>
     </h2>
-    <div class="skills-grid reveal reveal-delay-2">
-      <div class="skill-group">
-        <div class="skill-group-title en">Languages</div>
-        <div class="skill-group-title es">Lenguajes</div>
-        <div class="skill-list">
-          <div class="skill-item"><span>Python</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Go</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>TypeScript / JavaScript</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Java</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>PHP</span><div class="skill-dot"></div></div>
-        </div>
+    <div class="skills-table bracket-frame">
+      <div class="skills-col">
+        <div class="col-head"><span class="en">Languages</span><span class="es">Lenguajes</span></div>
+        <div class="skill-row"><span>Python</span><span class="skill-level">▪▪▪▪▪</span></div>
+        <div class="skill-row"><span>Go</span><span class="skill-level">▪▪▪▪▫</span></div>
+        <div class="skill-row"><span>TypeScript / JavaScript</span><span class="skill-level">▪▪▪▪▫</span></div>
+        <div class="skill-row"><span>Java</span><span class="skill-level">▪▪▪▫▫</span></div>
+        <div class="skill-row"><span>PHP</span><span class="skill-level">▪▪▫▫▫</span></div>
       </div>
-      <div class="skill-group">
-        <div class="skill-group-title en">Frameworks & Tools</div>
-        <div class="skill-group-title es">Frameworks y Herramientas</div>
-        <div class="skill-list">
-          <div class="skill-item"><span>Django / FastAPI</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Go / Gin</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Vue 3 / Angular</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Spring Boot</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Rasa NLP</span><div class="skill-dot"></div></div>
-        </div>
+      <div class="skills-col">
+        <div class="col-head"><span class="en">Frameworks &amp; Tools</span><span class="es">Frameworks y Herramientas</span></div>
+        <div class="skill-row"><span>Django / FastAPI</span><span class="skill-level">▪▪▪▪▪</span></div>
+        <div class="skill-row"><span>Go / Gin</span><span class="skill-level">▪▪▪▪▫</span></div>
+        <div class="skill-row"><span>Vue 3 / Angular</span><span class="skill-level">▪▪▪▪▫</span></div>
+        <div class="skill-row"><span>Spring Boot</span><span class="skill-level">▪▪▪▫▫</span></div>
+        <div class="skill-row"><span>Rasa NLP</span><span class="skill-level">▪▪▪▫▫</span></div>
       </div>
-      <div class="skill-group">
-        <div class="skill-group-title en">Infrastructure & Cloud</div>
-        <div class="skill-group-title es">Infraestructura y Cloud</div>
-        <div class="skill-list">
-          <div class="skill-item"><span>AWS (EC2, S3, EKS, RDS)</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Oracle Cloud / GCP</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Docker / Kubernetes</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>PostgreSQL / MongoDB</span><div class="skill-dot"></div></div>
-          <div class="skill-item"><span>Nginx / GitHub Actions</span><div class="skill-dot"></div></div>
-        </div>
+      <div class="skills-col">
+        <div class="col-head"><span class="en">Infrastructure &amp; Cloud</span><span class="es">Infraestructura y Cloud</span></div>
+        <div class="skill-row"><span>AWS (EC2, S3, EKS, RDS)</span><span class="skill-level">▪▪▪▪▫</span></div>
+        <div class="skill-row"><span>Oracle Cloud / GCP</span><span class="skill-level">▪▪▪▫▫</span></div>
+        <div class="skill-row"><span>Docker / Kubernetes</span><span class="skill-level">▪▪▪▪▪</span></div>
+        <div class="skill-row"><span>PostgreSQL / MongoDB</span><span class="skill-level">▪▪▪▪▪</span></div>
+        <div class="skill-row"><span>Nginx / GitHub Actions</span><span class="skill-level">▪▪▪▪▫</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<hr class="divider"/>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
-    <p class="section-label reveal">
-      <span class="en">05 — Contact</span>
-      <span class="es">05 — Contacto</span>
-    </p>
-    <h2 class="section-title reveal reveal-delay-1">
-      <span class="en">Let's build<br/>something <em>great.</em></span>
-      <span class="es">Construyamos<br/>algo <em>grande.</em></span>
+    <div class="section-head">
+      <p class="section-label"><span class="index-num">05</span><span class="en">Contact</span><span class="es">Contacto</span></p>
+    </div>
+    <h2 class="section-title" style="margin-bottom:2.5rem">
+      <span class="en">Let's build something great.</span>
+      <span class="es">Construyamos algo grande.</span>
     </h2>
     <div class="contact-grid">
-      <p class="contact-text reveal reveal-delay-2">
+      <p class="contact-text">
         <span class="en">I'm open to freelance projects, remote positions, and interesting technical challenges. Whether you have a product idea or need a senior developer to strengthen your team — let's talk.</span>
         <span class="es">Estoy disponible para proyectos freelance, posiciones remotas y retos técnicos interesantes. Ya sea que tengas una idea de producto o necesites un desarrollador senior para fortalecer tu equipo — hablemos.</span>
       </p>
-      <div class="contact-links reveal reveal-delay-3">
-        <a href="mailto:brandodiazmont@gmail.com" class="contact-link">
+      <div class="contact-links">
+        <a href="mailto:brandodiazmont@gmail.com" class="contact-link" data-confirm-en="Opening mail client..." data-confirm-es="Abriendo cliente de correo...">
           <div>
             <div class="contact-link-label">Email</div>
             <div class="contact-link-val">brandodiazmont@gmail.com</div>
           </div>
-          <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2v9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="contact-link-status"></div>
         </a>
-        <a href="tel:+573001833643" class="contact-link">
+        <a href="tel:+573001833643" class="contact-link" data-confirm-en="Opening dialer..." data-confirm-es="Abriendo marcador...">
           <div>
             <div class="contact-link-label"><span class="en">Phone / WhatsApp</span><span class="es">Teléfono / WhatsApp</span></div>
             <div class="contact-link-val">+57 300 183 3643</div>
           </div>
-          <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2v9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="contact-link-status"></div>
         </a>
-        <a href="https://github.com/Brando1998" target="_blank" class="contact-link">
+        <a href="https://github.com/Brando1998" target="_blank" rel="noopener" class="contact-link" data-confirm-en="Opening GitHub..." data-confirm-es="Abriendo GitHub...">
           <div>
             <div class="contact-link-label">GitHub</div>
             <div class="contact-link-val">github.com/Brando1998</div>
           </div>
-          <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2v9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="contact-link-status"></div>
         </a>
       </div>
     </div>
@@ -437,8 +390,8 @@
 </section>
 
 <footer>
-  <p>© 2025 Brando Díaz Montealegre</p>
-  <p class="en">Designed & built from scratch</p>
+  <p>© 2026 BRANDO_DIAZ.SYS</p>
+  <p class="en">Designed &amp; built from scratch</p>
   <p class="es">Diseñado y construido desde cero</p>
 </footer>
 
