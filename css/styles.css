@@ -4,7 +4,7 @@
   --bg:#FFFFFF;
   --ink:#0A0A0A;
   --ink2:#4A4A4A;
-  --ink3:#8A8A8A;
+  --ink3:#6B6B6B;
   --border:#DBDBDB;
   --grid-line:#EDEDED;
   --accent:#0B4FE0;
@@ -131,7 +131,7 @@ section{padding:5.5rem 2.5rem;position:relative}
 .about-grid{display:grid;grid-template-columns:180px 1fr;gap:2.5rem 3rem;align-items:start}
 .node-frame{border:1px solid var(--border);overflow:hidden;background:var(--bg);aspect-ratio:4/5}
 .node-frame img{display:block;width:100%;height:100%;object-fit:cover}
-.about-text{font-size:var(--fs-body);font-weight:400;color:var(--ink2);line-height:1.75;max-width:60ch;grid-column:2}
+.about-text{font-size:var(--fs-body);font-weight:400;color:var(--ink2);line-height:1.75;max-width:60ch}
 .about-text p+p{margin-top:1.1rem}
 .stats-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border)}
 .stat-tile{padding:1.25rem 1.5rem;border-left:1px solid var(--border)}
@@ -229,7 +229,6 @@ footer p{font-family:var(--mono);font-size:.68rem;color:rgba(255,255,255,.4);fon
   #hero{padding:6rem 1.25rem 3rem}
   section{padding:3.5rem 1.25rem}
   .about-grid{grid-template-columns:120px 1fr}
-  .about-text{grid-column:2}
   .stats-row{grid-template-columns:1fr 1fr}
   .stat-tile:nth-child(3){border-left:none}
   .stat-tile{border-bottom:1px solid var(--border)}
